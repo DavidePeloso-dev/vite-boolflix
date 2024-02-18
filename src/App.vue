@@ -1,4 +1,5 @@
 <script>
+import AppHeader from './components/AppHeader.vue';
 export default {
   name: 'App',
   data() {
@@ -7,6 +8,7 @@ export default {
     }
   },
   components: {
+    AppHeader,
   },
   methods: {
 
@@ -14,6 +16,8 @@ export default {
 }
 </script>
 
-<template></template>
+<template>
+  <AppHeader></AppHeader>
+</template>
 
 <style scoped></style>

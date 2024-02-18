@@ -8,3 +8,49 @@
 }
 
 /*#endregion*/
+
+/*#region root*/
+:root {
+  --boolflix-primary: #E50914;
+  --boolflix-dark: black;
+  --boolflix-light: white;
+}
+
+/*#endregion*/
+
+/*#region general css*/
+.container {
+  width: 80%;
+  margin: auto;
+
+  & .row {
+    margin: 0 -1rem;
+    padding: 1rem 0;
+  }
+}
+
+
+/*#endregion*/
+
+/*#region utilities*/
+.d-flex {
+  display: flex;
+}
+
+.gap-3 {
+  gap: 1rem;
+}
+
+.jf-between {
+  justify-content: space-between;
+}
+
+.jf-center {
+  justify-content: center;
+}
+
+.al-center {
+  align-items: center;
+}
+
+/*#endregion*/
