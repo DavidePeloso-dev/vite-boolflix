@@ -19,6 +19,10 @@
 /*#endregion*/
 
 /*#region general css*/
+body {
+  background-color: var(--boolflix-dark);
+}
+
 .container {
   width: 80%;
   margin: auto;

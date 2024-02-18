@@ -35,6 +35,7 @@ export default {
 <style scoped>
 header {
     background-color: var(--boolflix-dark);
+    box-shadow: 0 0 50px var(--boolflix-primary);
 }
 
 .search {
