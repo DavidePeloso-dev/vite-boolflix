@@ -1,9 +1,10 @@
 <script>
+import { state } from '../state.js'
 export default {
     name: 'AppHeader',
     data() {
         return {
-            searchTitle: ""
+            state
         }
     },
     components: {
@@ -22,8 +23,9 @@ export default {
                     <img src="/boolflix-logo.svg" alt="logo">
                 </div>
                 <div class="search d-flex gap-3 al-center">
-                    <input type="text" name="search" id="search" v-model="searchTitle">
-                    <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
+                    <input type="text" name="search" id="search" @keyup.enter="state.getSearchMovie"
+                        v-model="state.searchTitle" placeholder="Search Title">
+                    <label for="search" @click="state.getSearchMovie"><i class="fa-solid fa-magnifying-glass"></i></label>
                 </div>
             </div>
         </div>
@@ -37,5 +39,10 @@ header {
 
 .search {
     color: var(--boolflix-light);
+
+    & input {
+        padding: 0.25rem 1rem;
+        font-size: 1rem;
+    }
 }
 </style>
