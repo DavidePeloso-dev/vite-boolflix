@@ -40,6 +40,7 @@ export default {
             <div class="row d-flex">
                 <div class="col-2" v-for="movie in state.movies">
                     <div class="card">
+                        <img :src="state.img_prefix + movie.poster_path" alt="">
                         <ul>
                             <li v-if="unike(movie)">{{ movie.title }}</li>
                             <li>{{ movie.original_title || movie.original_name }}</li>
