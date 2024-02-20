@@ -17,16 +17,14 @@ export default {
 
 <template>
     <header>
-        <div class="container">
-            <div class="row d-flex jf-between">
-                <div class="logo">
-                    <img src="/boolflix-logo.svg" alt="logo">
-                </div>
-                <div class="search d-flex gap-3 al-center">
-                    <input type="text" name="search" id="search" @keyup.enter="state.getSearchMovie"
-                        v-model="state.searchTitle" placeholder="Search Title">
-                    <label for="search" @click="state.getSearchMovie"><i class="fa-solid fa-magnifying-glass"></i></label>
-                </div>
+        <div class="container d-flex jf-between">
+            <div class="logo">
+                <img src="/boolflix-logo.svg" alt="logo">
+            </div>
+            <div class="search d-flex gap-3 al-center">
+                <input type="text" name="search" id="search" @keyup.enter="state.getSearchMovie" v-model="state.searchTitle"
+                    placeholder="Search Title">
+                <label for="search" @click="state.getSearchMovie"><i class="fa-solid fa-magnifying-glass"></i></label>
             </div>
         </div>
     </header>
@@ -36,6 +34,7 @@ export default {
 header {
     background-color: var(--boolflix-dark);
     box-shadow: 0 0 50px var(--boolflix-primary);
+    padding: 1rem 0;
 }
 
 .search {
