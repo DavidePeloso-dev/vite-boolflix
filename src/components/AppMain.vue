@@ -15,17 +15,18 @@ export default {
                 { language: "en", icon: "us" },
                 { language: "ja", icon: "jp" }
             ];
-
-            let icon = movie.original_language
+            let icon = movie.original_language;
             flags.forEach(flag => {
                 if (flag.language === movie.original_language) {
-                    icon = flag.icon
-                    console.log(movie.original_language, flag.language);
-                }
-            })
-            console.log(icon);
-            return icon
-
+                    icon = flag.icon;
+                };
+            });
+            return icon;
+        },
+        unike(movie) {
+            if (movie.title == movie.original_title || movie.original_name) {
+                return false
+            } else { return true }
         }
     },
     props: {
@@ -40,8 +41,8 @@ export default {
                 <div class="col-2" v-for="movie in state.movies">
                     <div class="card">
                         <ul>
-                            <li>{{ movie.title }}</li>
-                            <li>{{ movie.original_title }}</li>
+                            <li v-if="unike(movie)">{{ movie.title }}</li>
+                            <li>{{ movie.original_title || movie.original_name }}</li>
                             <li>
                                 {{ movie.original_language }}
                                 <i class="ms-1 fp fp-rounded" :class="languageIcon(movie)"></i>

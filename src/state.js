@@ -8,7 +8,7 @@ export const state = reactive({
 
     getSearchMovie() {
         console.log(this.api_prefix + '/search/movie?' + this.api_key + '&query=' + this.searchTitle);
-        axios.get(this.api_prefix + '/search/movie?' + this.api_key + '&query=' + this.searchTitle)
+        axios.get(this.api_prefix + '/search/multi?' + this.api_key + '&query=' + this.searchTitle)
             .then(resp => {
                 this.movies = []
                 const results = resp.data.results
