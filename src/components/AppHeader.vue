@@ -19,7 +19,8 @@ export default {
     <header>
         <div class="container d-flex jf-between">
             <div class="logo">
-                <img src="/boolflix-logo.svg" alt="logo">
+                <img class="b-logo" src="/boolflix-logo.svg" alt="logo">
+                <img class="b-icon" src="/boolflix-icon.svg" alt="icon-logo">
             </div>
             <div class="search d-flex gap-3 al-center">
                 <input type="text" name="search" id="search" @keyup.enter="state.getSearchMovie" v-model="state.searchTitle"
@@ -43,6 +44,24 @@ header {
     & input {
         padding: 0.25rem 1rem;
         font-size: 1rem;
+    }
+}
+
+.b-icon {
+    display: none;
+}
+
+.b-logo {
+    display: block;
+}
+
+@media screen and (max-width: 480px) {
+    .b-icon {
+        display: block;
+    }
+
+    .b-logo {
+        display: none;
     }
 }
 </style>
