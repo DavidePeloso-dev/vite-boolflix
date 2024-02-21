@@ -20,16 +20,17 @@ export default {
 <template>
     <div class="container">
         <form class="filter d-flex al-center gap-3">
+            <!-- cancellazione filtri, solo se presenti -->
             <div class="close-filter" v-show="filterActive">
                 <input type="radio" name="filter" id="close" value="close"
                     @click="state.searchType = 'multi?'; this.filterActive = false">
                 <label class="close" for="close"><i class="fa-solid fa-xmark"></i></label>
             </div>
-
+            <!-- filtro solo film -->
             <input type="radio" name="filter" id="movies" value="movies"
                 @click="state.searchType = 'movie?'; this.filterActive = true">
             <label for="movies">Movies</label>
-
+            <!-- filtro solo serie tv -->
             <input type="radio" name="filter" id="series" value="series"
                 @click="state.searchType = 'tv?'; this.filterActive = true">
             <label for="series">Series Tv</label>
