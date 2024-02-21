@@ -4,7 +4,7 @@ export default {
     name: 'AppHeader',
     data() {
         return {
-            state
+            state,
         }
     },
     components: {

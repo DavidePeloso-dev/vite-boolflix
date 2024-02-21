@@ -48,7 +48,7 @@ export default {
 </script>
 
 <template>
-    <div class="wrapper info" @click="$emit('close')">
+    <div class="wrapper info">
         <div class="container">
             <div class="row d-flex jf-center">
                 <div class="col-10">

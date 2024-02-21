@@ -1,5 +1,6 @@
 <script>
 import { state } from '../state.js';
+import FiltersElement from './FiltersElement.vue';
 import PosterElement from './PosterElement.vue';
 export default {
     name: 'AppMain',
@@ -9,7 +10,8 @@ export default {
         }
     },
     components: {
-        PosterElement
+        PosterElement,
+        FiltersElement
     },
     methods: {
 
@@ -21,6 +23,7 @@ export default {
 
 <template>
     <main class="my-5">
+        <FiltersElement></FiltersElement>
         <PosterElement></PosterElement>
     </main>
 </template>

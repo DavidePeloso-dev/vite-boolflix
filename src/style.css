@@ -104,6 +104,10 @@ img {
   gap: 1rem;
 }
 
+.gap-5 {
+  gap: 2rem;
+}
+
 .jf-between {
   justify-content: space-between;
 }
