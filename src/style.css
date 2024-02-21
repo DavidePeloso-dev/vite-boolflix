@@ -120,4 +120,12 @@ img {
   margin-left: 0.5rem;
 }
 
+.my-5 {
+  margin: 2rem 0;
+}
+
+.p-relative {
+  position: relative;
+}
+
 /*#endregion*/
