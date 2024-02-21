@@ -31,8 +31,8 @@ export default {
 <template>
     <div class="container p-relative">
         <div class="row d-flex">
+            <!-- mostra l'elemento solo se ha il poster -->
             <div class="col-2" v-show="movie.poster_path" v-for="movie in state.movies">
-                <!-- mostra l'elemento solo se ha il poster -->
                 <div class="card" @click="showInfo(movie)">
                     <!-- inseriamo il poster omettendo gli errori -->
                     <img v-if="movie.poster_path" :src="state.img_prefix + 'w342/' + movie.poster_path" alt="">

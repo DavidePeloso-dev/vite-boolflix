@@ -59,8 +59,8 @@ export default {
                             :src="state.img_prefix + 'w780/' + (state.movieInfo.backdrop_path || state.movieInfo.poster_path)"
                             alt="">
                         <ul>
-                            <!-- mostra il titolo solo se diverso dall'originale -->
                             <li class="subtitle">{{ state.movieInfo.original_title || state.movieInfo.original_name }}</li>
+                            <!-- mostra il titolo solo se diverso dall'originale -->
                             <li class="title" v-if="unike(state.movieInfo)">{{ state.movieInfo.title }}</li>
                             <li class="overview">{{ state.movieInfo.overview }}</li>
                             <!-- stampiamo la lingua e la bandiera se trovata -->
