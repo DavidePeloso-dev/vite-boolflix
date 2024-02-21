@@ -51,7 +51,7 @@ export default {
     <div class="wrapper info">
         <div class="container">
             <div class="row d-flex jf-center">
-                <div class="col-10">
+                <div class="w-80 w-lg-100">
                     <div class="card p-relative">
                         <i class="close fa-solid fa-xmark fa-xl" @click="$emit('close')"></i>
                         <!-- inseriamo il poster omettendo gli errori -->
@@ -142,5 +142,15 @@ export default {
 
 .stars {
     padding: 1rem 0;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+@media screen and (max-width: 992px) {
+    .w-lg-100 {
+        width: 100%;
+    }
 }
 </style>

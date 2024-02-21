@@ -30,7 +30,7 @@ img {
 }
 
 .container {
-  width: 80%;
+  width: 85%;
   margin: auto;
 
   & .row {
@@ -65,7 +65,7 @@ img {
 }
 
 .col-6 {
-  width: 50%;
+  width: calc(100% / 6);
 }
 
 .col-7 {

@@ -42,7 +42,7 @@ header {
     color: var(--boolflix-light);
 
     & input {
-        padding: 0.25rem 1rem;
+        padding: 0.25rem 0.5rem;
         font-size: 1rem;
     }
 }
@@ -55,7 +55,7 @@ header {
     display: block;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 450px) {
     .b-icon {
         display: block;
     }
