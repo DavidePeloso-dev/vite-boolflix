@@ -47,6 +47,11 @@ export default {
 .card {
     transition: all 1s;
     cursor: pointer;
+    border-radius: 0.5rem;
+
+    & img {
+        border-radius: 0.5rem;
+    }
 }
 
 .card:hover {
