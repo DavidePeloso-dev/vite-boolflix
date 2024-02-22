@@ -8,19 +8,24 @@ export const state = reactive({
     movies: [],
     img_prefix: "https://image.tmdb.org/t/p/",
     movieInfo: {},
+    faild: '',
 
     getSearchMovie() {
         axios.get(this.api_prefix + '/search/' + this.searchType + this.api_key + '&query=' + this.searchTitle)
             .then(resp => {
                 this.movies = []
+                this.faild = ''
                 const results = resp.data.results
                 results.forEach(result => {
                     this.movies.push(result)
                 });
-                this.searchTitle = ''
+                if (this.movies == '') {
+                    this.faild = "Sorry, we didn't found it!"
+                }
             })
             .catch(error => {
                 console.error(error);
+                this.faild = error.message
             })
     }
 

@@ -12,7 +12,21 @@ export default {
     components: {
     },
     methods: {
-
+        movieFilter() {
+            state.searchType = 'movie?';
+            this.filterActive = true;
+            state.getSearchMovie()
+        },
+        seriesFilter() {
+            state.searchType = 'tv?';
+            this.filterActive = true;
+            state.getSearchMovie()
+        },
+        closeFilter() {
+            state.searchType = 'multi?';
+            this.filterActive = false
+            state.getSearchMovie()
+        }
     },
 }
 </script>
@@ -22,17 +36,14 @@ export default {
         <form class="filter d-flex al-center gap-3">
             <!-- cancellazione filtri, solo se presenti -->
             <div class="close-filter" v-show="filterActive">
-                <input type="radio" name="filter" id="close" value="close"
-                    @click="state.searchType = 'multi?'; this.filterActive = false">
+                <input type="radio" name="filter" id="close" value="close" @click="closeFilter()">
                 <label class="close" for="close"><i class="fa-solid fa-xmark"></i></label>
             </div>
             <!-- filtro solo film -->
-            <input type="radio" name="filter" id="movies" value="movies"
-                @click="state.searchType = 'movie?'; this.filterActive = true">
+            <input type="radio" name="filter" id="movies" value="movies" @click="movieFilter()">
             <label for="movies">Movies</label>
             <!-- filtro solo serie tv -->
-            <input type="radio" name="filter" id="series" value="series"
-                @click="state.searchType = 'tv?'; this.filterActive = true">
+            <input type="radio" name="filter" id="series" value="series" @click="seriesFilter()">
             <label for="series">Series Tv</label>
         </form>
     </div>
@@ -53,6 +64,7 @@ export default {
         border: 1px solid var(--boolflix-light);
         border-radius: 1rem;
         padding: 0.25rem 1rem;
+        cursor: pointer;
     }
 
     & .close {

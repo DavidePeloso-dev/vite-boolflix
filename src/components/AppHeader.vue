@@ -23,8 +23,8 @@ export default {
                 <img class="b-icon" src="/boolflix-icon.svg" alt="icon-logo">
             </div>
             <div class="search d-flex gap-3 al-center">
-                <input type="text" name="search" id="search" @keyup.enter="state.getSearchMovie" v-model="state.searchTitle"
-                    placeholder="Search Title">
+                <input type="text" name="search" id="search" @keyup.enter="state.getSearchMovie"
+                    @keyup.esc="state.searchTitle = ''" v-model="state.searchTitle" placeholder="Search Title">
                 <label for="search" @click="state.getSearchMovie"><i class="fa-solid fa-magnifying-glass"></i></label>
             </div>
         </div>
@@ -44,6 +44,10 @@ header {
     & input {
         padding: 0.25rem 0.5rem;
         font-size: 1rem;
+    }
+
+    & i {
+        cursor: pointer;
     }
 }
 

@@ -7,7 +7,6 @@ export default {
         return {
             state,
             info: false,
-            movieId: ""
         }
     },
     components: {
@@ -15,9 +14,7 @@ export default {
     },
     methods: {
         showInfo(movie) {
-            if (this.info == false) {
-                this.info = true
-            }
+            this.info = true
             state.movieInfo = {}
             state.movieInfo = movie
         },
@@ -30,6 +27,7 @@ export default {
 
 <template>
     <div class="container p-relative">
+        <h3 class="my-5" v-if="state.faild">{{ state.faild }}</h3>
         <div class="row d-flex">
             <!-- mostra l'elemento solo se ha il poster -->
             <div class="col-6 col-xl-5 col-lg-4 col-md-3 col-sm-2" v-show="movie.poster_path" v-for="movie in state.movies">
@@ -38,7 +36,7 @@ export default {
                     <img v-if="movie.poster_path" :src="state.img_prefix + 'w342/' + movie.poster_path" alt="">
                 </div>
             </div>
-            <MovieInfo v-if="info" @close="closeInfo"></MovieInfo>
+            <MovieInfo v-if="info" @close="closeInfo" id="info"></MovieInfo>
         </div>
     </div>
 </template>

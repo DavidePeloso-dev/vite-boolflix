@@ -44,6 +44,9 @@ export default {
             return Math.round(movie.vote_average * 5 / 10)
         }
     },
+    mounted() {
+        this.$refs.movieInfo.focus()
+    }
 }
 </script>
 
@@ -52,7 +55,7 @@ export default {
         <div class="container">
             <div class="row d-flex jf-center">
                 <div class="w-80 w-lg-100">
-                    <div class="card p-relative">
+                    <div class="card p-relative" @keyup.esc="$emit('close')" tabindex="0" ref="movieInfo">
                         <i class="close fa-solid fa-xmark fa-xl" @click="$emit('close')"></i>
                         <!-- inseriamo il poster omettendo gli errori -->
                         <img v-if="state.movieInfo.poster_path"
@@ -116,6 +119,8 @@ export default {
     background-color: rgb(36, 35, 35);
     padding: 2rem;
     text-transform: capitalize;
+    border: 1px solid var(--boolflix-light);
+    border-radius: 5px;
 
     & img {
         height: 400px;
