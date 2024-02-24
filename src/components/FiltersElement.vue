@@ -15,16 +15,25 @@ export default {
         movieFilter() {
             state.movies = []
             this.filterActive = true;
-            state.getSearchMovie()
+            state.filterType = 'movie'
+            if (state.searchTitle != '') {
+                state.getSearchMovie()
+            }
         },
         seriesFilter() {
             state.movies = []
             this.filterActive = true;
-            state.getSearchTv()
+            state.filterType = 'tv'
+            if (state.searchTitle != '') {
+                state.getSearchTv()
+            }
         },
         closeFilter() {
             this.filterActive = false
-            state.getSearchAll()
+            state.filterType = ''
+            if (state.searchTitle != '') {
+                state.getSearchAll()
+            }
         }
     },
 }

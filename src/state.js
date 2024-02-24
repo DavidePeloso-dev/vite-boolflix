@@ -8,6 +8,7 @@ export const state = reactive({
     img_prefix: "https://image.tmdb.org/t/p/",
     movieInfo: {},
     faild: '',
+    filterType: '',
 
     getSearchMovie() {
         axios.get(this.api_prefix + '/search/movie?' + this.api_key + '&query=' + this.searchTitle)
@@ -45,8 +46,14 @@ export const state = reactive({
     },
     getSearchAll() {
         this.movies = []
-        this.getSearchMovie()
-        this.getSearchTv()
+        if (this.filterType == 'movie') {
+            this.getSearchMovie()
+        } else if (this.filterType == 'tv') {
+            this.getSearchTv()
+        } else {
+            this.getSearchMovie()
+            this.getSearchTv()
+        }
         console.log(this.movies);
     }
 
