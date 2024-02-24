@@ -13,19 +13,18 @@ export default {
     },
     methods: {
         movieFilter() {
-            state.searchType = 'movie?';
+            state.movies = []
             this.filterActive = true;
             state.getSearchMovie()
         },
         seriesFilter() {
-            state.searchType = 'tv?';
+            state.movies = []
             this.filterActive = true;
-            state.getSearchMovie()
+            state.getSearchTv()
         },
         closeFilter() {
-            state.searchType = 'multi?';
             this.filterActive = false
-            state.getSearchMovie()
+            state.getSearchAll()
         }
     },
 }

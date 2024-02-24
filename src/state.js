@@ -11,9 +11,8 @@ export const state = reactive({
     faild: '',
 
     getSearchMovie() {
-        axios.get(this.api_prefix + '/search/' + this.searchType + this.api_key + '&query=' + this.searchTitle)
+        axios.get(this.api_prefix + '/search/movie?' + this.api_key + '&query=' + this.searchTitle)
             .then(resp => {
-                this.movies = []
                 this.faild = ''
                 const results = resp.data.results
                 results.forEach(result => {
@@ -27,6 +26,29 @@ export const state = reactive({
                 console.error(error);
                 this.faild = error.message
             })
+    },
+    getSearchTv() {
+        axios.get(this.api_prefix + '/search/tv?' + this.api_key + '&query=' + this.searchTitle)
+            .then(resp => {
+                this.faild = ''
+                const results = resp.data.results
+                results.forEach(result => {
+                    this.movies.push(result)
+                });
+                if (this.movies == '') {
+                    this.faild = "Sorry, we didn't found it!"
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                this.faild = error.message
+            })
+    },
+    getSearchAll() {
+        this.movies = []
+        this.getSearchMovie()
+        this.getSearchTv()
+        console.log(this.movies);
     }
 
 })

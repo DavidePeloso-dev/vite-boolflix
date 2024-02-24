@@ -32,7 +32,7 @@ export default {
          * @param {object} movie oggetto da cui recuperare il titolo
          */
         unike(movie) {
-            if (movie.title == movie.original_title || movie.original_name) {
+            if (movie.title || movie.name == movie.original_title || movie.original_name) {
                 return false
             } else { return true }
         },
@@ -64,7 +64,8 @@ export default {
                         <ul>
                             <li class="subtitle">{{ state.movieInfo.original_title || state.movieInfo.original_name }}</li>
                             <!-- mostra il titolo solo se diverso dall'originale -->
-                            <li class="title" v-if="unike(state.movieInfo)">{{ state.movieInfo.title }}</li>
+                            <li class="title" v-if="unike(state.movieInfo)">{{ state.movieInfo.title || state.movieInfo.name
+                            }}</li>
                             <li class="overview">{{ state.movieInfo.overview }}</li>
                             <!-- stampiamo la lingua e la bandiera se trovata -->
                             <li class="language">

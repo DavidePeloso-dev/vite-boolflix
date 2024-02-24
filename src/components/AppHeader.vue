@@ -23,9 +23,9 @@ export default {
                 <img class="b-icon" src="/boolflix-icon.svg" alt="icon-logo">
             </div>
             <div class="search d-flex gap-3 al-center">
-                <input type="text" name="search" id="search" @keyup.enter="state.getSearchMovie"
+                <input type="text" name="search" id="search" @keyup.enter="state.getSearchAll()"
                     @keyup.esc="state.searchTitle = ''" v-model="state.searchTitle" placeholder="Search Title">
-                <label for="search" @click="state.getSearchMovie"><i class="fa-solid fa-magnifying-glass"></i></label>
+                <label for="search" @click="state.getSearchAll()"><i class="fa-solid fa-magnifying-glass"></i></label>
             </div>
         </div>
     </header>
