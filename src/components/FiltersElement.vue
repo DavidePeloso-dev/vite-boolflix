@@ -43,7 +43,7 @@ export default {
             <label for="movies">Movies</label>
             <!-- filtro solo serie tv -->
             <input type="radio" name="filter" id="series" value="series" @click="seriesFilter()">
-            <label for="series">Series Tv</label>
+            <label for="series">Series</label>
         </form>
     </div>
 </template>
